@@ -1,0 +1,13 @@
+{
+  "name": "microbitrailroadswitchcontroller",
+  "version": "1.0.0",
+  "description": "Micro:bit Railroad Switch Controller",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "microbit": "lancaster-university/microbit"
+  },
+  "targetDependencies": {},
+  "bin": "./source",
+  "private": true,
+  "author": "Ernst-Paul ten Brinke"
+}
