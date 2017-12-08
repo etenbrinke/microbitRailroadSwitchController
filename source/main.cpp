@@ -25,10 +25,11 @@ enum LedGroup {
   SIGNAL_POLE_LEDS_2 = 3
 };
 
-Color RED (0, 100, 0);
-Color RED_H (0, 200, 0);
-Color GREEN (100, 0, 0);
-Color GREEN_H (200, 0, 0);
+Color RED_L (0, 40, 0);
+Color RED (0, 70, 0);
+Color RED_H (0, 100, 0);
+Color GREEN (70, 0, 0);
+Color GREEN_H (100, 0, 0);
 Color YELLOW (35, 80, 0);
 Color PURPLE (0, 35, 80);
 Color BLACK (0, 0, 0);
@@ -268,7 +269,7 @@ uint8_t readButtonsPressed() {
 void powerLEDOn(bool on) {
     if (on)
         // use red as this uses less power then green or blue
-        showColor(PANEL_LEDS, 7, RED);
+        showColor(PANEL_LEDS, 7, RED_L);
     else
         showColor(PANEL_LEDS, 7, BLACK);
 }
