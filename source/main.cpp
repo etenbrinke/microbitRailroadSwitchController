@@ -15,9 +15,11 @@
 #define SWITCH_3                    3
 #define SWITCH_4                    4
 
-#define LED_SWITCH_COUNTER          14
+#define LED_SWITCH_COUNTER          24
 #define LED_SIGNAL_COUNTER          250
 #define LOOP_DELAY                  300
+#define RANDOM_SWITCH               300
+#define RANDOM_SIGNAL               250
 
 enum LedGroup {
   PANEL_LEDS = 1, 
@@ -471,14 +473,15 @@ int main() {
     SignalPole signalPole1Sw4 (led1Sw4Sp1, led2Sw4Sp1);
     SignalPole signalPole2Sw4 (led1Sw4Sp2, led2Sw4Sp2);
 
+    // The start positions depends on our track layout and our needs
     // Switch 1
     Switch switch1 (1, 1, signalPole1Sw1, signalPole2Sw1, panelLedSw1, true);
     // Switch 2
     Switch switch2 (2, 1, signalPole1Sw2, signalPole2Sw2, panelLedSw2, true);
     // Switch 3
-    Switch switch3 (3, 1, signalPole1Sw3, signalPole2Sw3, panelLedSw3, true);
+    Switch switch3 (3, 2, signalPole1Sw3, signalPole2Sw3, panelLedSw3, true);
     // Switch 4
-    Switch switch4 (4, 1, signalPole1Sw4, signalPole2Sw4, panelLedSw4, true);
+    Switch switch4 (4, 2, signalPole1Sw4, signalPole2Sw4, panelLedSw4, true);
 
     LedCounterSwitch ledCounterSwitch1 (0, 0, 0, 0);
     LedCounterSwitch ledCounterSwitch2 (0, 0, 0, 0);
@@ -491,7 +494,7 @@ int main() {
     powerLEDOn(true);
 
     while (1) {
-        if ((randomSwitchMode) && (uBit.random(300) == 0)) {
+        if ((randomSwitchMode) && (uBit.random(RANDOM_SWITCH) == 0)) {
             buttonPressed = uBit.random(4)+1; 
             uBit.serial.printf("Random mode will flip switch %i\r\n", buttonPressed); 
         } else {
@@ -576,7 +579,7 @@ int main() {
         }
 
         // Randomly put signal poles on Hold, Drive Slow or Drive Warning signal
-        if ((randomLedMode) && (uBit.random(400) == 0)) {
+        if ((randomLedMode) && (uBit.random(RANDOM_SIGNAL) == 0)) {
             randomSwitch = uBit.random(4)+1;
             randomLedOperation = uBit.random(4);
             switch (randomSwitch) {
