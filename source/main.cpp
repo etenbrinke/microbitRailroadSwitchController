@@ -427,8 +427,6 @@ int main() {
     // In case we feed the pulses directly to the ULN2803A IC (according to the hardware circuit in this repo) then a
     // pulse length of 500 ms is necessary
     pulseLength = 6;
-    randomSwitchMode = false;
-    randomLedMode = false;
 
     // Create the Neopixels, Signal Poles and Switches
 
@@ -492,6 +490,10 @@ int main() {
     signalPoleLEDs1.clear();
     signalPoleLEDs2.clear();
     powerLEDOn(true);
+
+    randomSwitchMode = false;
+    randomLedMode = true;
+    showColor(PANEL_LEDS, 5, Color(uBit.random(80), uBit.random(80), uBit.random(80)));
 
     while (1) {
         if ((randomSwitchMode) && (uBit.random(RANDOM_SWITCH) == 0)) {
