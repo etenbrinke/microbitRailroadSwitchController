@@ -18,8 +18,8 @@
 #define LED_SWITCH_COUNTER          24
 #define LED_SIGNAL_COUNTER          250
 #define LOOP_DELAY                  300
-#define RANDOM_SWITCH               300
-#define RANDOM_SIGNAL               200
+#define RANDOM_SWITCH               250
+#define RANDOM_SIGNAL               300
 
 enum LedGroup {
   PANEL_LEDS = 1, 
