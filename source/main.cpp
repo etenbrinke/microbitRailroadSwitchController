@@ -573,8 +573,8 @@ int main() {
                 }
                 switch1.setSwitchPosition(1);
                 switch2.setSwitchPosition(1);
-                switch3.setSwitchPosition(1);
-                switch4.setSwitchPosition(1);
+                switch3.setSwitchPosition(2);
+                switch4.setSwitchPosition(2);
                 break;
             default:
                 break;
