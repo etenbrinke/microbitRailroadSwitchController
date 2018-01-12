@@ -475,7 +475,7 @@ int main() {
     // Switch 1
     Switch switch1 (1, 1, signalPole1Sw1, signalPole2Sw1, panelLedSw1, true);
     // Switch 2
-    Switch switch2 (2, 1, signalPole1Sw2, signalPole2Sw2, panelLedSw2, true);
+    Switch switch2 (2, 2, signalPole1Sw2, signalPole2Sw2, panelLedSw2, true);
     // Switch 3
     Switch switch3 (3, 2, signalPole1Sw3, signalPole2Sw3, panelLedSw3, true);
     // Switch 4
@@ -572,7 +572,7 @@ int main() {
                     uBit.sleep(200);
                 }
                 switch1.setSwitchPosition(1);
-                switch2.setSwitchPosition(1);
+                switch2.setSwitchPosition(2);
                 switch3.setSwitchPosition(2);
                 switch4.setSwitchPosition(2);
                 break;
